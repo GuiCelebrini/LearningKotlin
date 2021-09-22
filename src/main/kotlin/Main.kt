@@ -1,24 +1,19 @@
 fun main(args: Array<String>) {
-    val myCar = Car()
+    /*val myCar = Car()
     myCar.builder = "McLaren"
     println(myCar.builder)
-    myCar.haveAPilot()
-}
+    myCar.haveAPilot()*/
 
-class Car: RaceCar{
-    var builder : String = ""
-        get() {
-            return "Builder $field"
-        }
-        set(value) {
-            field = "$value Motors"
-        }
+    var carsList = arrayListOf<Car>()
+    carsList.add(Car("Ferrari", "Charles Leclerc"))
+    carsList.add(Car("Mercedes", "Lewis Hamilton"))
+    carsList.add(Car("Red Bull", "Verstappen"))
+    carsList.add(Car("McLaren", "Lando Norris"))
 
-    override fun haveAPilot() {
-        println("My pilot is Lando Norris")
+    for (Car in carsList){
+        println(Car.builder)
+        println(Car.haveAPilot())
+        println("-----------------------")
     }
-}
 
-interface RaceCar{
-    fun haveAPilot()
 }

@@ -1,6 +1,7 @@
 class Car : RaceCar {
 
     var pilot : String = ""
+    var carStatus : CarStatus = CarStatus.FREE
 
     var builder : String = ""
         get() {
@@ -18,8 +19,16 @@ class Car : RaceCar {
         this.builder = builder
         this.pilot = pilot
     }
+
+    constructor(builder: String){
+        this.builder = builder
+    }
 }
 
 interface RaceCar{
     fun haveAPilot()
+}
+
+enum class CarStatus(){
+    BROKEN, FREE, ENGAGED
 }
